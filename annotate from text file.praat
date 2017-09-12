@@ -1,4 +1,4 @@
-# This is a Praat script that annotate all odd annotations from selected TextGrid using text file.
+# This is a Praat script that annotate all annotations from selected TextGrid using text file.
 # Compare with http://www.helsinki.fi/%7Elennes/praat-scripts/public/label_from_text_file.praat
 
 # This script is distributed under the GNU General Public License.
