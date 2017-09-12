@@ -11,7 +11,13 @@ form Open all files in directory
   text resultfile /home/agricolamz/_DATA/OneDrive1/_Work/Scripts/_Praat/annotate from text file/stimuli.txt
   comment Which tier should be annotated:
   integer anntier 1
+  comment Annotation should be created in every ... interval:
+  integer blank 2
+  comment Should existing annotation be overwritten (1 is true)?
+  integer replace 1
 endform
+
+replacement$ = if replace = 1 then ".*" else "^$" fi
 
 grid = selected ("TextGrid", 1)
 Read Strings from raw text file: resultfile$
@@ -21,7 +27,7 @@ for i from 1 to n_annotation
 	selectObject: annotfile
 	annotation$ = Get string: i
 	selectObject: grid
-	Replace interval text: anntier, i*2, i*2, "", annotation$, "Literals"
+	Replace interval text: anntier, i*blank, i*blank, replacement$, annotation$, "Regular Expressions"
 endfor
 selectObject: annotfile
 Remove
