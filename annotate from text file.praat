@@ -8,11 +8,11 @@
 
 form Open all files in directory
   comment Provide path to the file with stimuli:
-  text resultfile /home/agricolamz/_DATA/OneDrive1/_Work/Scripts/_Praat/annotate from text file/stimuli.txt
+  text resultfile //home/agricolamz/_DATA/OneDrive1/_Work/Articles/2017 II VOT article/labels_tier.csv
   comment Which tier should be annotated:
   integer anntier 1
   comment Annotation should be created in every ... interval:
-  integer blank 2
+  integer blank 1
   comment Should existing annotation be overwritten (1 is true)?
   integer replace 1
 endform
@@ -31,3 +31,4 @@ for i from 1 to n_annotation
 endfor
 selectObject: annotfile
 Remove
+selectObject: grid
